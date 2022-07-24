@@ -393,6 +393,8 @@ func (mt *maptype) indirectelem() bool { // store ptr to elem instead of elem it
 func (mt *maptype) reflexivekey() bool { // true if k==k for all keys
 	return mt.flags&4 != 0
 }
+
+// todo：什么情况下需要更新key呢？
 func (mt *maptype) needkeyupdate() bool { // true if we need to update key on an overwrite
 	return mt.flags&8 != 0
 }
